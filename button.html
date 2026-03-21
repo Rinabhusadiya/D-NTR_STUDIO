@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - NTR Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* BASIC SETTINGS */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+        body { background: #f9f9f9; color: #333; line-height: 1.6; }
+
+        /* --- NAVBAR (Same as Home Page) --- */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 5%; background: white; box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            position: sticky; top: 0; z-index: 1000;
+        }
+        nav .logo { color: #ff4d4d; font-size: 24px; font-weight: 700; text-decoration: none; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul li a { text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
+        nav ul li a:hover { color: #ff4d4d; }
+
+        /* --- CONTACT HERO SECTION --- */
+        .contact-hero {
+            background: #1a1a1a; color: white;
+            text-align: center; padding: 80px 20px;
+        }
+        .contact-hero h1 { font-size: 40px; margin-bottom: 10px; color: #ff4d4d; }
+
+        /* --- CONTACT CONTENT --- */
+        .contact-container {
+            max-width: 1100px; margin: -50px auto 50px;
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px; padding: 0 20px;
+        }
+
+        /* Left Side: Contact Info Cards */
+        .info-box {
+            background: white; padding: 30px; border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .info-item { display: flex; align-items: center; margin-bottom: 25px; }
+        .icon-circle {
+            width: 50px; height: 50px; background: rgba(255, 77, 77, 0.1);
+            color: #ff4d4d; border-radius: 50%; display: flex;
+            justify-content: center; align-items: center; font-size: 20px; margin-right: 15px;
+        }
+        .info-text h4 { margin-bottom: 2px; color: #333; }
+        .info-text p { color: #777; font-size: 14px; }
+
+        /* Right Side: Contact Form */
+        .contact-form {
+            background: white; padding: 40px; border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%; padding: 12px; margin-bottom: 15px;
+            border: 1px solid #ddd; border-radius: 8px; outline: none;
+        }
+        .contact-form textarea { height: 120px; resize: none; }
+        .send-btn {
+            width: 100%; padding: 14px; background: #ff4d4d; color: white;
+            border: none; border-radius: 8px; cursor: pointer; font-weight: 600; font-size: 16px;
+        }
+        .send-btn:hover { background: #e63b3b; }
+
+        /* --- MAP SECTION --- */
+        .map-section { width: 100%; height: 400px; margin-top: 50px; filter: grayscale(100%); transition: 0.5s; }
+        .map-section:hover { filter: grayscale(0%); }
+
+        /* --- FOOTER (Same as Home Page) --- */
+        .footer { background: #1a1a1a; color: #fff; padding: 60px 5% 20px; margin-top: 0; }
+        .footer-container {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px; max-width: 1200px; margin: 0 auto;
+        }
+        .footer-section h3 { color: #ff4d4d; margin-bottom: 20px; position: relative; }
+        .footer-section h3::after {
+            content: ''; position: absolute; left: 0; bottom: -5px;
+            width: 40px; height: 2px; background: #ff4d4d;
+        }
+        .footer-section p, .footer-section a { color: #ccc; text-decoration: none; font-size: 14px; line-height: 2; }
+        .footer-bottom {
+            text-align: center; padding-top: 30px; margin-top: 40px;
+            border-top: 1px solid #333; color: #888; font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-hero h1 { font-size: 30px; }
+            nav ul { display: none; } /* Mobile Menu handle can be added later */
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+<script>
+(function(){
+  emailjs.init("YOUR_PUBLIC_KEY");
+})();
+</script>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">NTR STUDIO</a>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="machines.html">Machines</a></li>
+            <li><a href="button.html" style="color:#ff4d4d;">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="contact-hero">
+        <h1>Get In Touch</h1>
+        <p>We are here to help you capture your memories.</p>
+    </section>
+
+    <section class="contact-container">
+        
+        <div class="info-box">
+            <div class="info-item">
+                <div class="icon-circle">📍</div>
+                <div class="info-text">
+                    <h4>Location</h4>
+                    <p>Limdi, Surendranagar, Gujarat</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon-circle">📞</div>
+                <div class="info-text">
+                    <h4>Phone</h4>
+                    <p>+91 99136 22760</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon-circle">✉️</div>
+                <div class="info-text">
+                    <h4>Email</h4>
+                    <p>info@ntrstudio.com</p>
+                </div>
+            </div>
+            <div class="info-item">
+                <div class="icon-circle">⏰</div>
+                <div class="info-text">
+                    <h4>Working Hours</h4>
+                    <p>Mon - Sat: 9:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+        </div>
+
+       <div class="contact-form">
+    <form id="contactForm">
+
+        <input type="text" id="name" placeholder="Your Name" required>
+
+        <input type="email" id="email" placeholder="Your Email" required>
+
+        <input type="text" id="subject" placeholder="Subject" required>
+
+        <textarea id="message" placeholder="How can we help you?"></textarea>
+
+        <button type="submit" class="send-btn">Send Message</button>
+
+    </form>
+</div>
+
+    </section>
+
+<iframe 
+    src="https://www.google.com/maps?q=NTR%20Studio%20Yogi%20Complex%20Limdi%20Bus%20Stand%20Road%20Surendranagar&z=18&output=embed"
+    width="100%" 
+    height="400" 
+    style="border:0; border-radius:10px;" 
+    allowfullscreen="" 
+    loading="lazy">
+</iframe>
+   
+   
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h3>NTR STUDIO</h3>
+                <p>Professional photography, videography & editing studio with premium equipment and a talented team.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a><br>
+                <a href="gallery.html">Gallery</a><br>
+                <a href="machines.html">Machines</a><br>
+                <a href="button.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 +91 9913622760</p>
+                <p>📍 Limdi, Surendranagar, Gujarat</p>
+                <p>✉️ info@ntrstudio.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="#">📷 Instagram</a><br>
+                <a href="https://youtube.com/@studiontr6308" target="_blank">🎥 YouTube</a><br>
+                <a href="#">📘 Facebook</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 NTR Studio | All rights reserved.
+        </div>
+    </footer>
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(e){
+    e.preventDefault();
+
+    let params = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        subject: document.getElementById("subject").value,
+        message: document.getElementById("message").value
+    };
+
+    emailjs.send("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", params)
+    .then(function(){
+        alert("Message Sent Successfully ✅");
+    }, function(error){
+        alert("Error: " + JSON.stringify(error));
+    });
+});
+
+</script>
+</body>
+</html>
