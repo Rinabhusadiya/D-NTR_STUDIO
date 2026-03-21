@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NTR Studio - Admin & Registration</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+        
+        body { 
+            background: #f4f7f6; 
+            display: flex; 
+            flex-direction: column;
+            align-items: center; 
+            min-height: 100vh; 
+            padding: 20px; 
+        }
+
+        /* ANIMATIONS */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-in { animation: fadeIn 0.5s ease forwards; }
+
+        /* MAIN CARD */
+        .card {
+            background: white;
+            width: 100%;
+            max-width: 450px;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        h2 { color: #ff4d4d; text-align: center; margin-bottom: 25px; }
+
+        /* FORM STYLING */
+        .form-group { margin-bottom: 20px; }
+        input {
+            width: 100%;
+            padding: 14px;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+        }
+        input:focus { border-color: #ff4d4d; }
+
+        .btn {
+            width: 100%;
+            padding: 15px;
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .btn:hover { background: #e63b3b; transform: translateY(-2px); }
+
+        /* ADMIN PANEL (OWNER VIEW) */
+        .admin-section {
+            display: none; /* Hidden by default */
+            width: 100%;
+            max-width: 800px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { padding: 12px; border: 1px solid #eee; text-align: left; }
+        th { background: #ff4d4d; color: white; }
+        tr:nth-child(even) { background: #f9f9f9; }
+
+        .admin-toggle {
+            margin-top: 20px;
+            font-size: 12px;
+            color: #bbb;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+        .clear-btn {
+            background: #333;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card animate-in" id="regCard">
+        <div id="formView">
+            <h2>Register Now</h2>
+            <form id="regForm">
+                <div class="form-group">
+                    <input type="text" id="name" placeholder="Full Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" id="phone" placeholder="Phone Number" pattern="[0-9]{10}" required>
+                </div>
+                <button type="submit" class="btn">Submit</button>
+            </form>
+            
+            <p class="admin-toggle" onclick="toggleAdmin()">Owner Login (View Database)</p>
+        </div>
+
+        <div id="successView" style="display:none; text-align:center;">
+            <div style="font-size: 50px; color: #4CAF50;">✔</div>
+            <h2>Thank You!</h2>
+            <p>Your data has been recorded.</p>
+            <button class="btn" style="margin-top:20px;" onclick="location.reload()">New Registration</button>
+        </div>
+    </div>
+
+    <div class="admin-section" id="adminSection">
+        <button class="clear-btn" onclick="clearData()">Clear All</button>
+        <h3 style="color: #333;">Owner Dashboard - Total Registrations</h3>
+        <p id="counter" style="font-weight: bold; color: #ff4d4d;">Total: 0</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody id="adminTableBody">
+                </tbody>
+        </table>
+        <button class="admin-toggle" style="border:none; background:none; margin-top:20px;" onclick="toggleAdmin()">Close Dashboard</button>
+    </div>
+
+    <script>
+        const regForm = document.getElementById('regForm');
+        const adminSection = document.getElementById('adminSection');
+        const adminTableBody = document.getElementById('adminTableBody');
+
+        // 1. SAVE DATA ON SUBMIT
+        regForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const newUser = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value
+            };
+
+            // Get existing users from localStorage
+            let users = JSON.parse(localStorage.getItem('ntr_database')) || [];
+            users.push(newUser);
+
+            // Save back to localStorage
+            localStorage.setItem('ntr_database', JSON.stringify(users));
+
+            // Switch to Success View
+            document.getElementById('formView').style.display = 'none';
+            document.getElementById('successView').style.display = 'block';
+            
+            // Refresh the admin table data
+            loadAdminData();
+        });
+
+        // 2. LOAD DATA INTO ADMIN TABLE
+        function loadAdminData() {
+            const users = JSON.parse(localStorage.getItem('ntr_database')) || [];
+            adminTableBody.innerHTML = '';
+            document.getElementById('counter').innerText = `Total Registrations: ${users.length}`;
+
+            users.forEach(user => {
+                const row = `<tr>
+                    <td>${user.name}</td>
+                    <td>${user.email}</td>
+                    <td>${user.phone}</td>
+                </tr>`;
+                adminTableBody.innerHTML += row;
+            });
+        }
+
+        // 3. SHOW/HIDE ADMIN PANEL
+        function toggleAdmin() {
+            if (adminSection.style.display === 'block') {
+                adminSection.style.display = 'none';
+            } else {
+                adminSection.style.display = 'block';
+                loadAdminData();
+                adminSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        // 4. CLEAR ALL DATA
+        function clearData() {
+            if(confirm("Delete all registered users?")) {
+                localStorage.removeItem('ntr_database');
+                loadAdminData();
+            }
+        }
+
+        // Initialize table on load
+        window.onload = loadAdminData;
+    </script>
+
+</body>
+</html>
