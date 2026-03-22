@@ -435,6 +435,19 @@ nav ul li a:hover::after{
 }.footer-container {
     text-align: center;
 }
+        .photo-card img{
+display:block;
+text-decoration:none;
+border-bottom:none;
+}
+        .photo-card{
+position:relative;
+overflow:hidden;
+}
+
+.photo-card:hover::after{
+display:none;
+}
     </style>
 </head>
 <body>
@@ -470,7 +483,7 @@ nav ul li a:hover::after{
             <!-- <div class="photo-overlay"><h3>Events</h3></div> -->
         </div>
         <div class="photo-card reveal">
-            <img src="img35.jpeg" alt="DSLR Photography" loading="lazy">
+            <img src="img43.jpeg" alt="DSLR Photography" loading="lazy">
             <!-- <div class="photo-overlay"><h3>Portrait Shoot</h3></div> -->
         </div>
         <div class="photo-card reveal">
@@ -482,7 +495,7 @@ nav ul li a:hover::after{
             <!-- <div class="photo-overlay"><h3>Cinematic Shots</h3></div> -->
         </div>
         <div class="photo-card reveal">
-            <img src="photo6.jpg" alt="NTR Studio Creative Work" loading="lazy">
+            <img src="img35.jpeg" alt="NTR Studio Creative Work" loading="lazy">
             <!-- <div class="photo-overlay"><h3>Cinematic Shots</h3></div> -->
         </div>
     </div>
@@ -495,7 +508,7 @@ nav ul li a:hover::after{
         <h4>Wedding Photography</h4>
     </div>
 
-    <div class="service-card" onclick="showGallery('prewedding')">
+    <div class="service-card" onclick="showGallery('photos')">
         <div class="service-icon">📸</div>
         <h4>PHOTOS</h4>
     </div>
@@ -577,7 +590,7 @@ const galleryData = {
     'wedding': ['img32.jpg', 'img19.jpeg', 'img36.jpeg', 'img37.jpeg', 'img38.jpeg', 'img20.jpeg'],
     // 'baby': ['b1.jpg', 'b2.jpg', 'b3.jpg', 'b4.jpg', 'b5.jpg', 'b6.jpg'],
     // 'editing': ['e1.jpg', 'e2.jpg', 'e3.jpg', 'e4.jpg', 'e5.jpg', 'e6.jpg'],
-    'prewedding': ['img26.jpeg', 'img23.jpeg', 'img22.jpeg', 'img21.jpeg', 'img31.jpeg', 'img41.jpeg'],
+    'photos': ['img44.jpeg', 'img23.jpeg', 'img22.jpeg', 'img21.jpeg', 'img31.jpeg', 'img41.jpeg'],
     'events': ['E1.jpeg', 'E2.jpeg', 'E3.jpeg', 'E4.jpeg', 'E5.jpeg', 'img28.jpeg']
 };
 
