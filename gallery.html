@@ -448,6 +448,27 @@ overflow:hidden;
 .photo-card:hover::after{
 display:none;
 }
+        .photo-card,
+.photo-card *{
+text-decoration: none !important;
+border-bottom: none !important;
+}
+
+.photo-card::after,
+.photo-card::before,
+.photo-card img::after,
+.photo-card img::before{
+content: none !important;
+display: none !important;
+}.photo-card a{
+text-decoration: none !important;
+border-bottom: none !important;
+}
+
+.photo-card a::after{
+display:none !important;
+content:none !important;
+}
     </style>
 </head>
 <body>
@@ -590,7 +611,7 @@ const galleryData = {
     'wedding': ['img32.jpg', 'img19.jpeg', 'img36.jpeg', 'img37.jpeg', 'img38.jpeg', 'img20.jpeg'],
     // 'baby': ['b1.jpg', 'b2.jpg', 'b3.jpg', 'b4.jpg', 'b5.jpg', 'b6.jpg'],
     // 'editing': ['e1.jpg', 'e2.jpg', 'e3.jpg', 'e4.jpg', 'e5.jpg', 'e6.jpg'],
-    'photos': ['img44.jpeg', 'img23.jpeg', 'img22.jpeg', 'img21.jpeg', 'img31.jpeg', 'img41.jpeg'],
+    'photos': ['img44.jpeg', 'img23.jpeg', 'img45.jpeg', 'img21.jpeg', 'img31.jpeg', 'img41.jpeg'],
     'events': ['E1.jpeg', 'E2.jpeg', 'E3.jpeg', 'E4.jpeg', 'E5.jpeg', 'img28.jpeg']
 };
 
