@@ -85,11 +85,56 @@
             text-align: center; padding-top: 30px; margin-top: 40px;
             border-top: 1px solid #333; color: #888; font-size: 14px;
         }
+@media (max-width: 768px) {
+    .contact-hero h1 { font-size: 30px; }
 
-        @media (max-width: 768px) {
-            .contact-hero h1 { font-size: 30px; }
-            nav ul { display: none; } /* Mobile Menu handle can be added later */
-        }
+    nav ul{
+        gap:15px;
+        font-size:14px;
+    }
+}@media (max-width: 768px) {
+    .contact-hero h1 { font-size: 30px; }
+
+    nav ul{
+        gap:15px;
+        font-size:14px;
+    }
+}
+        nav ul li a{
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: 0.3s;
+    position: relative;
+}
+
+nav ul li a::after{
+    content:'';
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0;
+    height:2px;
+    background:#ff4d4d;
+    transition:0.3s;
+}
+
+nav ul li a:hover::after{
+    width:100%;
+}nav ul li a.active{
+    color:#ff4d4d;
+}
+
+nav ul li a.active::after{
+    width:100%;
+}@media (max-width: 768px) {
+    .contact-hero h1 { font-size: 30px; }
+
+    nav ul{
+        gap:15px;
+        font-size:14px;
+    }
+}
     </style>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 
@@ -156,7 +201,7 @@
 
         <input type="email" id="email" placeholder="Your Email" required>
 
-        <input type="text" id="subject" placeholder="Subject" required>
+        <input type="text" id="Number" placeholder="Subject" required>
 
         <textarea id="message" placeholder="How can we help you?"></textarea>
 
@@ -193,14 +238,16 @@
             <div class="footer-section">
                 <h3>Contact Info</h3>
                 <p>📞 +91 9913622760</p>
-                <p>📍 Limdi, Surendranagar, Gujarat</p>
-                <p>✉️ info@ntrstudio.com</p>
+                <p>📍 Limdi, Surendranagar, Gujarat
+                </p>
+                <p>✉️ ntr.studio.limbdi@gmail.com</p>
+                <!-- <p>✉️ info@ntrstudio.com</p> -->
             </div>
             <div class="footer-section">
                 <h3>Follow Us</h3>
-                <a href="#">📷 Instagram</a><br>
+                <a href="https://www.instagram.com/studio_ntr?igsh=YTlyYzQ5bTQxYW9s">📷 Instagram</a><br>
                 <a href="https://youtube.com/@studiontr6308" target="_blank">🎥 YouTube</a><br>
-                <a href="#">📘 Facebook</a>
+                <!-- <a href="#">📘 Facebook</a> -->
             </div>
         </div>
         <div class="footer-bottom">
