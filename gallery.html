@@ -325,119 +325,46 @@
         grid-template-columns: 1fr;
     }
 }
-        /* ===== FAST RESPONSIVE GALLERY ===== */
-
-.gallery-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-    gap:15px;
-}
-
-.photo-card{
-    position:relative;
-    width:100%;
-    aspect-ratio: 4/5; /* responsive height */
-    overflow:hidden;
-    border-radius:12px;
-}
-
-.photo-card img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    transition:0.4s ease;
-}
-
-.photo-card:hover img{
-    transform:scale(1.05);
-}
-
-/* dynamic gallery */
-.photo-display-grid{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:12px;
-}
-
-.photo-display-grid img{
-    width:100%;
-    aspect-ratio:4/5;
-    object-fit:cover;
-    border-radius:10px;
-    opacity:0;
-    transform:scale(0.95);
-    transition:0.4s ease;
-}
-
-.photo-display-grid img.show{
-    opacity:1;
-    transform:scale(1);
-}
-
-/* tablet */
-@media(max-width:900px){
-    .photo-display-grid{
-        grid-template-columns:repeat(2,1fr);
-    }
-}
-
-/* mobile */
-@media(max-width:500px){
-    .photo-display-grid{
-        grid-template-columns:1fr;
-    }
-}nav ul li a{
-    position:relative;
-    text-decoration:none;
-    color:#333;
-    font-weight:500;
-}
-
-nav ul li a::after{
-    content:'';
-    position:absolute;
-    left:0;
-    bottom:-5px;
-    width:0%;
-    height:2px;
-    background:#ff4d4d;
-    transition:0.3s;
-}
-
-nav ul li a:hover::after{
-    width:100%;
-}@media (max-width:900px){
-
-.menu-icon{
-display:block;
-}
-
-nav ul li a:hover{
-    padding-left:0;
-}
-/* NAVBAR ONLY underline */
+        /* NAVBAR underline */
 nav ul li a{
-    position:relative;
-    display:inline-block;
-    color:#333;
-    text-decoration:none;
+    position: relative;
+    display: inline-block;
 }
 
 nav ul li a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-4px;
-    width:0;
-    height:2px;
-    background:#ff4d4d;
-    transition:0.3s;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #ff4d4d;
+    transition: 0.3s;
 }
 
 nav ul li a:hover::after{
-    width:100%;
+    width: 100%;
 }
 
+/* MOBILE FIX */
+@media (max-width: 900px){
+    nav ul li{
+        text-align: center;
+    }
+
+    nav ul li a{
+        display: inline-block;   /* important */
+    }
+
+    nav ul li a::after{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    nav ul li a:hover::after{
+        width: 50%;
+    }
+}
     </style>
 </head>
 <body>
@@ -537,8 +464,7 @@ nav ul li a:hover::after{
             <h3>Contact Info</h3>
             <p>📞 +91 9913622760</p>
             <p>📍 NTR Studio, Limdi, Surendranagar, Gujarat</p>
-            <p>✉️ ntr.studio.limbdi@gmail.com</p>
-            <!-- <p>✉️ info@ntrstudio.com</p> -->
+       <p>✉️ ntr.studio.limbdi@gmail.com</p>
         </div>
 
         <div class="footer-section">
