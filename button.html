@@ -135,6 +135,50 @@ nav ul li a.active::after{
         font-size:14px;
     }
 }
+        .menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+nav ul{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+text-align:center;
+display:none;
+padding:20px 0;
+box-shadow:0 5px 10px rgba(0,0,0,0.1);
+}
+
+nav ul.active{
+display:flex;
+}
+
+nav ul li{
+padding:10px 0;
+}
+
+/* FOOTER CENTER MOBILE */
+.footer-section{
+text-align:center;
+}
+
+.footer-section h3::after{
+left:50%;
+transform:translateX(-50%);
+}
+
+}
     </style>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 
@@ -148,6 +192,9 @@ nav ul li a.active::after{
 
     <nav>
         <a href="index.html" class="logo">NTR STUDIO</a>
+        <div class="menu-toggle" id="menu-toggle">
+☰
+</div>
         <ul>
             <li><a href="index.html">Home</a></li>
             <li><a href="gallery.html">Gallery</a></li>
@@ -272,6 +319,11 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
         alert("Error: " + JSON.stringify(error));
     });
 });
+   
+document.getElementById("menu-toggle").addEventListener("click", function(){
+document.getElementById("nav-menu").classList.toggle("active");
+});
+
 
 </script>
 </body>
