@@ -178,10 +178,43 @@ left:50%;
 transform:translateX(-50%);
 }
 
+}.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+@media(max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+nav ul{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:white;
+flex-direction:column;
+text-align:center;
+display:none;
+}
+
+nav ul.active{
+display:flex;
+}
 }
     </style>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+<script>
+const toggle = document.getElementById("menu-toggle");
+const menu = document.getElementById("nav-menu");
 
+toggle.addEventListener("click", () => {
+    menu.classList.toggle("active");
+});
+</script>
 <script>
 (function(){
   emailjs.init("YOUR_PUBLIC_KEY");
