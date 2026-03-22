@@ -205,16 +205,10 @@ nav ul.active{
 display:flex;
 }
 }
+        
     </style>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
-<script>
-const toggle = document.getElementById("menu-toggle");
-const menu = document.getElementById("nav-menu");
 
-toggle.addEventListener("click", () => {
-    menu.classList.toggle("active");
-});
-</script>
 <script>
 (function(){
   emailjs.init("YOUR_PUBLIC_KEY");
@@ -355,6 +349,18 @@ document.getElementById("contactForm").addEventListener("submit", function(e){
 
 
 
+</script>
+    <script>
+document.addEventListener("DOMContentLoaded", function(){
+
+    const toggle = document.getElementById("menu-toggle");
+    const menu = document.getElementById("nav-menu");
+
+    toggle.addEventListener("click", function(){
+        menu.classList.toggle("active");
+    });
+
+});
 </script>
 </body>
 </html>
