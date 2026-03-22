@@ -440,14 +440,7 @@ display:block;
 text-decoration:none;
 border-bottom:none;
 }
-        .photo-card{
-position:relative;
-overflow:hidden;
-}
 
-.photo-card:hover::after{
-display:none;
-}
         .photo-card,
 .photo-card *{
 text-decoration: none !important;
@@ -468,6 +461,21 @@ border-bottom: none !important;
 .photo-card a::after{
 display:none !important;
 content:none !important;
+}
+        .photo-card{
+line-height:0;
+}
+
+.photo-card img{
+vertical-align:top;
+}
+        .photo-card{
+line-height:0;
+font-size:0;
+}
+
+.photo-card img{
+display:block;
 }
     </style>
 </head>
