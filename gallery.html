@@ -405,6 +405,36 @@ nav ul li a:hover::after{
     height: 100%;
     object-fit: cover;
 }
+        .footer-section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 40px;
+    height: 2px;
+    background: #ff4d4d;
+}/* MOBILE FOOTER CENTER FIX */
+@media (max-width: 600px) {
+    .footer-container {
+        text-align: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-section h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}.footer-container {
+    text-align: center;
+}
     </style>
 </head>
 <body>
