@@ -510,17 +510,34 @@ nav ul li > a:hover::after{
     text-decoration: none !important;
     border-bottom: none !important;
 }
-      .footer {
-    padding: 60px 5% 20px;
-}.footer {
+ 
+/* RESET EVERYTHING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* IMPORTANT BODY FIX */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* FULL WIDTH FOOTER */
+.footer {
     background: #1a1a1a;
-    color: #ffffff;
-    padding: 60px 0 20px;   /* ❗ 5% દૂર કર્યું */
-    margin-top: 50px;
-}.footer-container {
+    color: #fff;
+    width: 100vw;        /* 🔥 important */
+    margin: 0;
+    padding: 60px 0 20px;
+}
+
+/* CENTER CONTENT ONLY */
+.footer-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 20px; /* અંદર થોડી safe spacing */
+    padding: 0 20px;
 }
     </style>
 </head>
