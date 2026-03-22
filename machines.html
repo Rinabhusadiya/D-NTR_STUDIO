@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machines - NTR Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* BASIC RESET */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html, body {
+            width: 100%;
+            overflow-x: hidden;
+            font-family: "Poppins", sans-serif;
+            background: #f5f5f5;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVBAR (STICKY FIX) */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            background: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            /* આ ત્રણ લાઈન નેવબારને ઉપર રોકી રાખશે */
+            position: fixed; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+        nav .logo {
+            color: #ff4d4d;
+            font-size: 24px;
+            font-weight: 700;
+            text-decoration: none;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+        nav ul li a:hover { color: #ff4d4d; }
+
+        .menu-icon {
+            display: none;
+            font-size: 30px;
+            cursor: pointer;
+            color: #ff4d4d;
+        }
+
+        /* VIDEO HERO (Margin-top added because of fixed navbar) */
+        .video-hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #000;
+            margin-top: 60px; /* નેવબારની જગ્યા છોડવા માટે */
+        }
+        .hero-video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%; 
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+            z-index: 1;
+        }
+        .video-hero::after {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 2;
+        }
+        .video-content {
+            position: relative;
+            z-index: 3;
+            text-align: center;
+            color: #fff;
+        }
+        .video-content h1 { font-size: clamp(32px, 5vw, 60px); text-transform: uppercase; }
+
+        /* CARD SECTION */
+        .card-section {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            padding: 80px 40px;
+            flex-wrap: wrap;
+        }
+        .card {
+            width: 280px;
+            height: 360px;
+            border-radius: 18px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            transition: 0.5s;
+        }
+        .card img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .card-text {
+            position: absolute;
+            bottom: 0; width: 100%;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white; padding: 20px; text-align: center;
+            transform: translateY(100%); transition: 0.5s;
+        }
+        .card:hover img { transform: scale(1.1); }
+        .card:hover .card-text { transform: translateY(0); }
+        .card:hover { transform: translateY(-12px); }
+
+        .center-btn { text-align: center; margin: 40px 0; }
+        .back-home {
+            padding: 12px 25px; background: #ff4d4d; color: white;
+            text-decoration: none; border-radius: 10px; font-weight: 600;
+        }
+
+        /* FOOTER (HOME PAGE STYLE WITH UNDERLINE) */
+        .footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 60px 5% 20px;
+            width: 100%;
+        }
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-section h2, .footer-section h3 {
+            color: #ff4d4d;
+            margin-bottom: 20px;
+            position: relative; /* અન્ડરલાઈન માટે જરૂરી */
+        }
+        
+        /* હેડિંગ નીચે લાલ અન્ડરલાઈન */
+        .footer-section h2::after, .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 40px;
+            height: 2px;
+            background: #ff4d4d;
+        }
+
+        .footer-section p { color: #ccc; font-size: 15px; line-height: 1.6; margin-bottom: 10px; }
+        .footer-section a {
+            color: #ccc; text-decoration: none; display: block;
+            margin-bottom: 10px; transition: 0.3s;
+        }
+        .footer-section a:hover { color: #ff4d4d; transform: translateX(8px); }
+        
+        .footer-bottom {
+            text-align: center; padding-top: 30px; margin-top: 40px;
+            border-top: 1px solid #333; color: #888; font-size: 14px;
+        }
+
+        /* MOBILE RESPONSIVE */
+        @media (max-width: 900px) {
+            .menu-icon { display: block; }
+            nav ul {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px; left: 0; width: 100%;
+                background: white; padding: 20px;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            }
+            nav ul.show { display: flex; }
+            .footer-section h2::after, .footer-section h3::after {
+                left: 50%; transform: translateX(-50%); /* મોબાઈલમાં અન્ડરલાઈન સેન્ટર કરવા */
+            }
+            .footer-section { text-align: center; }
+        }
+        /* આ હોવર અને ક્લિક (active) બંને પર કામ કરશે */
+.card:hover .card-text,
+.card.active .card-text {
+    transform: translateY(0);
+}
+
+.card:hover img,
+.card.active img {
+    transform: scale(1.1);
+}
+.card {
+    width: 330px; /* tamne jetli moti card joiye hoy etli kari shako */
+    height: 250px; /* height pan adjust karo */
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* IMPORTANT */
+}.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+    </style>
+</head>
+<body>
+
+    <nav> 
+        <a href="ntr studio home.html" class="logo">NTR STUDIO</a>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <ul id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="machines.html">Machines</a></li>
+            <li><a href="button.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section class="video-hero">
+        <video autoplay muted loop playsinline class="hero-video">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support video.
+        </video>
+        <div class="video-content">
+            <h1>DIGITAL PRINTING MACHINE</h1>
+            <p>High-Quality Printing Solutions for your business.</p>
+            <br>
+            <a href="machinesbtn.html" style="background: #ff4d4d; padding: 15px 35px; color: white; text-decoration: none; border-radius: 50px; font-weight: 600;">View Machines</a>
+        </div>
+    </section>
+
+    <section class="card-section">
+        <div class="card"><img src="img7.jpg"><div class="card-text">Flex Printing</div></div>
+        <div class="card"><img src="IMG3.webp"><div class="card-text">Canon Machines</div></div>
+        <div class="card"><img src="img10.png"><div class="card-text">Photo Printing</div></div>
+    </section>
+     <section class="card-section">
+        <div class="card"><img src="img11.webp"><div class="card-text">Flex Printing</div></div>
+        <div class="card"><img src="img15.jpg"><div class="card-text">Canon Machines</div></div>
+        <div class="card"><img src="img14.webp"><div class="card-text">Photo Printing</div></div>
+    </section>
+
+    <!-- <div class="center-btn">
+        <a href="ntr studio home.html" class="back-home">← Back Home</a>
+    </div> -->
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>NTR STUDIO</h2>
+                <p>Professional photography, videography & editing studio with premium equipment and a talented team. We capture your memories with perfection.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="machines.html">Machines</a>
+                <a href="button.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 +91 9913622760</p>
+                <p>📍 Limdi, Surendranagar, Gujarat</p>
+                <p>✉️ info@ntrstudio.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="#">📷 Instagram</a>
+                <a href="https://youtube.com/@studiontr6308" target="_blank">🎥 YouTube</a>
+                <a href="#">📘 Facebook</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 NTR Studio | All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById("navLinks").classList.toggle("show");
+        }
+        // બધા કાર્ડ્સને સિલેક્ટ કરો
+const cards = document.querySelectorAll('.card');
+
+cards.forEach(card => {
+    card.addEventListener('click', function() {
+        // જો આ કાર્ડ પહેલેથી એક્ટિવ હોય તો તેને બંધ કરો
+        if (this.classList.contains('active')) {
+            this.classList.remove('active');
+        } else {
+            // બાકીના બધા કાર્ડ્સમાંથી 'active' ક્લાસ કાઢી નાખો
+            cards.forEach(c => c.classList.remove('active'));
+            // ફક્ત આ કાર્ડ પર 'active' ક્લાસ ઉમેરો
+            this.classList.add('active');
+        }
+    });
+});
+    </script>
+</body>
+</html>

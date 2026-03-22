@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NTR Studio Machines</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    background: #f5f5f5;
+}
+
+/* NAVBAR */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 5%;
+    background: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+.logo {
+    color: #ff4d4d;
+    font-size: 24px;
+    font-weight: 700;
+    text-decoration: none;
+}
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+nav ul li a:hover { color: #ff4d4d; }
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    margin-top: 70px;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('bg.jpg');
+    color: white;
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* MACHINES */
+.machines {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+    padding: 40px;
+}
+
+.machine-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+.machine-card:hover { transform: translateY(-10px); }
+
+.machine-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.machine-card:hover img {
+    transform: scale(1.08);
+}.machine-card img {
+    width: 100%;
+    height: 320px;
+    object-fit: contain;
+    background: #fff;
+}
+
+.machine-card button {
+    margin: 15px;
+    padding: 10px 20px;
+    background: #ff4d4d;
+    color: white;
+    border: none;
+    border-radius: 25px;
+}
+
+/* FOOTER */
+.footer {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 60px 5% 20px;
+}
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+}
+.footer-section h2, .footer-section h3 {
+    color: #ff4d4d;
+    margin-bottom: 15px;
+}
+.footer-section a {
+    color: #ccc;
+    display: block;
+    margin-bottom: 8px;
+    text-decoration: none;
+}
+.footer-section a:hover { color: #ff4d4d; }
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    color: #888;
+}
+
+/* MOBILE */
+@media(max-width:900px){
+    .menu-icon{display:block;}
+    nav ul{
+        display:none;
+        flex-direction:column;
+        position:absolute;
+        top:60px;
+        width:100%;
+        background:white;
+    }
+    nav ul.show{display:flex;}
+}
+/* FOOTER (HOME PAGE STYLE WITH UNDERLINE) */
+        .footer {
+            background: #1a1a1a;
+            color: #fff;
+            padding: 60px 5% 20px;
+            width: 100%;
+        }
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-section h2, .footer-section h3 {
+            color: #ff4d4d;
+            margin-bottom: 20px;
+            position: relative; /* અન્ડરલાઈન માટે જરૂરી */
+        }
+        
+        /* હેડિંગ નીચે લાલ અન્ડરલાઈન */
+        .footer-section h2::after, .footer-section h3::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 40px;
+            height: 2px;
+            background: #ff4d4d;
+        }
+
+        .footer-section p { color: #ccc; font-size: 15px; line-height: 1.6; margin-bottom: 10px; }
+        .footer-section a {
+            color: #ccc; text-decoration: none; display: block;
+            margin-bottom: 10px; transition: 0.3s;
+        }
+        .footer-section a:hover { color: #ff4d4d; transform: translateX(8px); }
+        
+        .footer-bottom {
+            text-align: center; padding-top: 30px; margin-top: 40px;
+            border-top: 1px solid #333; color: #888; font-size: 14px;
+        }
+
+.machine-card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.machine-card:hover {
+    transform: translateY(-8px);
+}
+
+.machine-card img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;   /* full fill */
+    display: block;
+    transition: transform 0.5s ease;
+}
+
+.machine-card:hover img {
+    transform: scale(1.1);
+}
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <a href="index.html" class="logo">NTR STUDIO</a>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <ul id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="machines.html">Machines</a></li>
+        <li><a href="button.html">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Our Printing Machines</h1>
+    <p>High-Quality Digital Printing Solutions</p>
+</section>
+
+<!-- MACHINES -->
+<section class="machines">
+
+    <div class="machine-card">
+        <img src="img7.jpg">
+        <!-- <h3>Flex Printing</h3> -->
+        <!-- <button>View Details</button> -->
+    </div>
+
+    <div class="machine-card">
+        <img src="img8.jpg">
+        <!-- <h3>Photo Printing</h3> -->
+        <!-- <button>View Details</button> -->
+    </div>
+
+    <div class="machine-card">
+        <img src="img42.jpeg">
+        <!-- <h3>Canon Machines</h3> -->
+        <!-- <button>View Details</button> -->
+    </div>
+
+</section>
+
+     <!-- MACHINES -->
+<section class="machines">
+
+    <div class="machine-card">
+        <img src="img12.jpg">
+        <!-- <h3>Flex Printing</h3> -->
+        <!-- <button>View Details</button> -->
+    </div>
+
+    <div class="machine-card">
+        <img src="img14.webp">
+        <!-- <h3>Photo Printing</h3> -->
+        <!-- <button>View Details</button> -->
+    </div>
+
+    <div class="machine-card">
+        <img src="img13.jpg">
+        <!-- <h3>Canon Machines</h3> -->
+        <!-- <button>View Details</button> -->
+    </div>
+
+</section>
+
+ <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>NTR STUDIO</h2>
+                <p>Professional photography, videography & editing studio with premium equipment and a talented team. We capture your memories with perfection.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <a href="index.html">Home</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="machines.html">Machines</a>
+                <a href="button.html">Contact</a>
+            </div>
+            <div class="footer-section">
+                <h3>Contact Info</h3>
+                <p>📞 +91 9913622760</p>
+                <p>📍 Limdi, Surendranagar, Gujarat</p>
+                <p>✉️ info@ntrstudio.com</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <a href="#">📷 Instagram</a>
+                <a href="https://youtube.com/@studiontr6308" target="_blank">🎥 YouTube</a>
+                <a href="#">📘 Facebook</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 NTR Studio | All rights reserved.
+        </div>
+    </footer>
+        
+<script>
+function toggleMenu(){
+    document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
