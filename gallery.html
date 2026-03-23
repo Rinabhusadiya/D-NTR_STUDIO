@@ -442,14 +442,14 @@ text-decoration:none;
 border-bottom:none;
 }
 
-        .photo-card,
+        /* .photo-card,
 .photo-card *{
 text-decoration: none !important;
 border-bottom: none !important;
-}
+} */
 
-.photo-card::after,
-.photo-card::before,
+/* .photo-card::after, */
+/* .photo-card::before,
 .photo-card img::after,
 .photo-card img::before{
 content: none !important;
@@ -457,9 +457,9 @@ display: none !important;
 }.photo-card a{
 text-decoration: none !important;
 border-bottom: none !important;
-}
+/* } */
 
-.photo-card a::after{
+/* .photo-card a::after{
 display:none !important;
 content:none !important;
 }
@@ -481,7 +481,7 @@ display:block;
         .gallery-grid .photo-card::after{
 display:none !important;
 content:none !important;
-}
+} */ */
         nav ul li > a{
     position: relative;
     display: inline-block;
@@ -501,16 +501,7 @@ nav ul li > a::after{
 nav ul li > a:hover::after{
     width: 100%;
 }
-.photo-card img {
-    display: block;          /* underline દૂર કરવા માટે important */
-    border: none;
-    text-decoration: none;
-}.photo-card,
-.photo-card * {
-    text-decoration: none !important;
-    border-bottom: none !important;
-}
- 
+
 /* RESET EVERYTHING */
 * {
     margin: 0;
@@ -559,6 +550,25 @@ text-align:center;
 
 .footer-section h3{
 position:relative;
+}
+      .photo-card::after,
+.photo-card::before{
+display:none !important;
+content:none !important;
+}
+
+.reveal::after,
+.reveal::before{
+display:none !important;
+content:none !important;
+}.photo-card img{
+display:block;
+width:100%;
+height:100%;
+object-fit:cover;
+border:none;
+}.photo-card{
+background:white;   /* grey placeholder remove */
 }
     </style>
 </head>
