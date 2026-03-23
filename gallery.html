@@ -36,15 +36,29 @@
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 20px;
         }
-        .photo-card {
+        /* .photo-card {
             position: relative; height: 350px; border-radius: 15px; overflow: hidden;
             box-shadow: 0 10px 20px rgba(0,0,0,0.1); cursor: pointer;
-        }
+        } */
+      .photo-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transform: translateZ(0); /* 🔥 line fix */
+}
         .photo-card img {
             width: 100%; height: 100%; object-fit: cover;
             transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
         }
-        .photo-card:hover img { transform: scale(1.1); }
+        /* .photo-card:hover img { transform: scale(1.1); } */
+      .photo-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transform: translateZ(0); /* 🔥 line fix */
+}
         .photo-overlay {
             position: absolute; inset: 0; background: rgba(0,0,0,0.3);
             display: flex; align-items: flex-end; padding: 20px;
