@@ -274,34 +274,8 @@
     gap: 20px;
 }
 
-/* .photo-card {
-    background: #f5f5f5;
-    border-radius: 12px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 400px; /* 👈 same size badha mate */
-} */
 
-/* .photo-card img {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain; /* ⭐ NO CUT */ */
-/* } */
-      .photo-card {
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.photo-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* ⭐ space remove kare */
-}.gallery {
+.gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* 2 column */
     gap: 15px;
@@ -381,13 +355,7 @@ nav ul li a:hover::after{
         width: 50%;
     }
 }
-        /* .section-title::after {
-  content: "";
-  display: block; */
-  /* width: 50px;   /* line ni length */ */
-  /* height: 3px;
-  background-color: red; */
-  /* margin: 10px auto; /* aa center ma lai jay chhe */ */
+        
 }.title-container {
   display: flex;
   flex-direction: column;
@@ -451,71 +419,8 @@ nav ul li a:hover::after{
 }.footer-container {
     text-align: center;
 }
-        /* .photo-card img{
-display:block;
-text-decoration:none;
-border-bottom:none;
-} */
-
-        /* .photo-card,
-.photo-card *{
-text-decoration: none !important;
-border-bottom: none !important;
-} */
-
-/* .photo-card::after, */
-/* .photo-card::before,
-.photo-card img::after,
-.photo-card img::before{
-content: none !important;
-display: none !important;
-}.photo-card a{
-text-decoration: none !important;
-border-bottom: none !important;
-/* } */
-
-/* .photo-card a::after{
-display:none !important;
-content:none !important;
-}
-        .photo-card{
-line-height:0;
-}
-
-.photo-card img{
-vertical-align:top;
-}
-        .photo-card{
-line-height:0;
-font-size:0;
-}
-
-.photo-card img{
-display:block;
-}
-        .gallery-grid .photo-card::after{
-display:none !important;
-content:none !important;
-} */ */
-        nav ul li > a{
-    position: relative;
-    display: inline-block;
-}
-
-nav ul li > a::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -4px;
-    width: 0;
-    height: 2px;
-    background: #ff4d4d;
-    transition: 0.3s;
-}
-
-nav ul li > a:hover::after{
-    width: 100%;
-}
+ 
+   
 
 /* RESET EVERYTHING */
 * {
@@ -566,71 +471,8 @@ text-align:center;
 .footer-section h3{
 position:relative;
 }
-      .photo-card::after,
-.photo-card::before{
-display:none !important;
-content:none !important;
-}
-
-.reveal::after,
-.reveal::before{
-display:none !important;
-content:none !important;
-}.photo-card img{
-display:block;
-width:100%;
-height:100%;
-object-fit:cover;
-border:none;
-}.photo-card{
-background:white;   /* grey placeholder remove */
-}
-      
-      .photo-card::after,
-.photo-card *::after{
-content: none !important;
-display: none !important;
-}
-
-.photo-card::before,
-.photo-card *::before{
-content: none !important;
-display: none !important;
-}.photo-card{
-position:relative;
-background:#fff;
-}
-
-.photo-card img{
-display:block;
-width:100%;
-height:100%;
-object-fit:cover;
-}
-      .photo-card {
-    position: relative;
-    height: 350px;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-    cursor: pointer;
-    background: #fff;
-}
-
-.photo-card img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-/* }.reveal { 
-    opacity: 0; 
-    transform: translateY(40px); 
-    transition: 0.8s ease-out; 
-}
-.reveal.active { 
-    opacity: 1; 
-    transform: translateY(0); 
-} */
+    
+  
     .reveal { 
     opacity: 0; 
     transition: opacity 0.8s ease-out; 
@@ -643,43 +485,686 @@ object-fit:cover;
     background:#f4f4f4;
 }
 
-.photo-card{
-    background:#f4f4f4;
-}.photo-card{
-    outline:1px solid #f4f4f4;
-}
-    .photo-card{
-    border:none !important;
-    outline:none !important;
-    box-shadow:none !important;
-    background:#fff !important;
-}
 
-.photo-card img{
-    border:none !important;
-    outline:none !important;
-    box-shadow:none !important;
-}
     .gallery-grid{
     gap:15px;
 }
 
-.photo-card{
-    margin:0;
-}.photo-card{
-    position:relative;
-    height:350px;
-    border-radius:15px;
-    overflow:hidden;
-    background:#fff;
 }
+      <!DOCTYPE html>
+<html lang="gu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Photo Gallery | NTR Studio Limdi - Best Photography</title>
+    <meta name="description" content="Explore NTR Studio's premium photography gallery. High-quality wedding, pre-wedding, and event photos in Limdi, Surendranagar.">
+    <meta name="keywords" content="NTR Studio Gallery, Wedding Photos, Pre-wedding Shoot Limdi, Professional Photography">
 
-.photo-card img{
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: "Poppins", sans-serif; background: #f4f4f4; overflow-x: hidden; scroll-behavior: smooth; }
+
+        /* NAVBAR */
+        nav {
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 15px 8%; background: white; position: sticky; top: 0; z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 22px; font-weight: 600; color: #ff4d4d; letter-spacing: 1px; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul li a { text-decoration: none; color: #333; font-weight: 500; transition: 0.3s; }
+        nav ul li a:hover { color: #ff4d4d; }
+        .menu-icon { display: none; font-size: 28px; cursor: pointer; color: #ff4d4d; }
+
+        /* GALLERY SECTION */
+        .gallery-container { padding: 60px 8%; text-align: center; }
+        .gallery-container h1 { margin-bottom: 40px; font-size: 32px; color: #222; }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+        /* .photo-card {
+            position: relative; height: 350px; border-radius: 15px; overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1); cursor: pointer;
+        } */
+      .photo-card img{
     width:100%;
     height:100%;
     object-fit:cover;
     display:block;
+    transform: translateZ(0); /* 🔥 line fix */
 }
+        .photo-card img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+        /* .photo-card:hover img { transform: scale(1.1); } */
+      .photo-card img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transform: translateZ(0); /* 🔥 line fix */
+}
+        .photo-overlay {
+            position: absolute; inset: 0; background: rgba(0,0,0,0.3);
+            display: flex; align-items: flex-end; padding: 20px;
+            opacity: 0; transition: 0.4s; color: white;
+        }
+        .photo-card:hover .photo-overlay { opacity: 1; }
+
+        /* SERVICES SECTION (3 UP, 2 DOWN - SAME SIZE) */
+        .services-section { padding: 80px 8%; background: white; text-align: center; }
+        .services-section h2 { margin-bottom: 50px; font-size: 30px; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr); /* 6 કોલમ ગ્રીડ */
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .service-card {
+            grid-column: span 2; /* દરેક કાર્ડ 2 કોલમ લેશે (6/2 = 3 કાર્ડ એક લાઈનમાં) */
+            background: #fff; padding: 40px 20px; border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #eee; transition: 0.4s;
+            display: flex; flex-direction: column; align-items: center; justify-content: center;
+            min-height: 200px;
+        }
+        /* છેલ્લે રહેલા 2 કાર્ડને સેન્ટર કરવા માટે */
+        .service-card:nth-child(4) { grid-column: 2 / span 2; } 
+        .service-card:nth-child(5) { grid-column: 4 / span 2; }
+
+        .service-card:hover { transform: translateY(-10px); border-color: #ff4d4d; box-shadow: 0 15px 35px rgba(255, 77, 77, 0.1); }
+        .service-card h4 { font-size: 18px; color: #333; margin-top: 15px; }
+        .service-icon { font-size: 40px; margin-bottom: 10px; }
+
+        /* REVEAL ANIMATION */
+        .reveal { opacity: 0; transform: translateY(40px); transition: 0.8s ease-out; }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* FOOTER */
+        /* .footer { background: #1a1a1a; color: #fff; padding: 60px 8% 20px; } */
+        .footer-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
+        .footer-section h2, .footer-section h3 { color: #ff4d4d; margin-bottom: 20px; }
+        .footer-section a { color: #bbb; text-decoration: none; display: block; margin-bottom: 12px; transition: 0.3s; }
+        .footer-section a:hover { color: #ff4d4d; padding-left: 5px; }
+        .footer-bottom { text-align: center; margin-top: 50px; padding-top: 20px; border-top: 1px solid #333; color: #777; }
+
+        /* RESPONSIVE */
+        @media (max-width: 900px) {
+            .menu-icon { display: block; }
+            nav ul { display: none; flex-direction: column; position: absolute; top: 70px; left: 0; width: 100%; background: white; padding: 20px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+            nav ul.show { display: flex; }
+            .services-grid { grid-template-columns: 1fr; } /* મોબાઈલમાં એક લાઈનમાં એક */
+            .service-card, .service-card:nth-child(4), .service-card:nth-child(5) { grid-column: span 1; }
+        }
+        /* ડાયનેમિક ગેલેરીનું કન્ટેનર */
+.dynamic-gallery-container {
+    margin-top: 50px;
+    display: none; /* શરૂઆતમાં છુપાયેલું રહેશે */
+    padding: 20px;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+#gallery-title {
+    margin-bottom: 30px;
+    color: #ff4d4d;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+/* 3x3 ગ્રીડ સેટિંગ */
+.photo-display-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* એક લાઈનમાં 3 ફોટા */
+    gap: 15px;
+}
+
+.photo-display-grid img {
+    width: 100%;
+    /* height: 250px; */
+    /* object-fit: cover; */
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    opacity: 0; /* એનિમેશન માટે શરૂઆતમાં 0 */
+    transform: scale(0.9);
+}
+
+/* ફોટા લોડ થાય ત્યારે એનિમેશન */
+.photo-display-grid img.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.photo-display-grid img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* મોબાઈલ માટે (એક લાઈનમાં 1 અથવા 2 ફોટા) */
+@media (max-width: 768px) {
+    .photo-display-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+/* FOOTER STYLES */
+.footer {
+    background: #1a1a1a; /* ડાર્ક બેકગ્રાઉન્ડ */
+    color: #ffffff;
+    padding: 60px 5% 20px;
+    margin-top: 50px;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h2 {
+    color: #ff4d4d; /* થીમ કલર */
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.footer-section h3 {
+    color: #ff4d4d;
+    font-size: 20px;
+    margin-bottom: 20px;
+    position: relative;
+}
+/* Heading નીચે નાની લાઈન */
+.footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 40px;
+    height: 2px;
+    background: #ff4d4d;
+}
+
+.footer-section p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 10px;
+}
+
+.footer-section a {
+    color: #cccccc;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 12px;
+    transition: 0.3s ease;
+    font-size: 15px;
+}
+
+/* હોવર એનિમેશન */
+.footer-section a:hover {
+    color: #ff4d4d;
+    padding-left: 8px; /* માઉસ લઈ જતાં થોડું ખસશે */
+}
+
+.social a {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 25px;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    color: #888;
+}
+
+/* મોબાઈલ માટે ખાસ રિસ્પોન્સિવ સેટિંગ */
+@media (max-width: 600px) {
+    .footer-section {
+        text-align: center;
+    }
+    .footer-section a:hover {
+        padding-left: 0;
+    }
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    overflow: hidden;
+}
+
+.gallery img {
+    width: 100%;
+    max-height: 550px;   /* 👈 image moti dekhase */
+    height: auto;
+    object-fit: contain; /* no cut */
+    display: block;
+    margin: auto;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 column */
+    gap: 15px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 300px;        /* same height for all */
+    object-fit: cover;    /* crop properly */
+    border-radius: 15px;
+    display: block;
+}
+.photo-display-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.photo-display-grid img {
+    width: 100%;
+    height: 460px;   /* same size */
+    /* object-fit: cover; */
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.4s ease;
+    opacity: 0;
+    transform: scale(0.9);
+}
+@media (max-width: 768px) {
+    .photo-display-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .photo-display-grid {
+        grid-template-columns: 1fr;
+    }
+}
+        /* NAVBAR underline */
+nav ul li a{
+    position: relative;
+    display: inline-block;
+}
+
+nav ul li a::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 2px;
+    background: #ff4d4d;
+    transition: 0.3s;
+}
+
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+/* MOBILE FIX */
+@media (max-width: 900px){
+    nav ul li{
+        text-align: center;
+    }
+
+    nav ul li a{
+        display: inline-block;   /* important */
+    }
+
+    nav ul li a::after{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    nav ul li a:hover::after{
+        width: 50%;
+    }
+}
+        
+}.title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+        /* SERVICES CARD IMAGE FIX */
+.service-card{
+    overflow: hidden;
+}
+
+.service-card img{
+    width: 100%;
+    height: 120px;   /* same size */
+    object-fit: contain;
+    display: block;
+}.service-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}.service-card{
+    overflow: hidden;
+}
+
+.service-card img{
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}.service-card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+        .footer-section h2::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 40px;
+    height: 2px;
+    background: #ff4d4d;
+}/* MOBILE FOOTER CENTER FIX */
+@media (max-width: 600px) {
+    .footer-container {
+        text-align: center;
+    }
+
+    .footer-section {
+        text-align: center;
+    }
+
+    .footer-section h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-section h2::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}.footer-container {
+    text-align: center;
+}
+ 
+   
+
+/* RESET EVERYTHING */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* IMPORTANT BODY FIX */
+html, body {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* FULL WIDTH FOOTER */
+.footer {
+    background: #1a1a1a;
+    color: #fff;
+    width: 100vw;        /* 🔥 important */
+    margin: 0;
+    padding: 60px 0 20px;
+}
+
+/* CENTER CONTENT ONLY */
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+      .gallery-grid img{
+border:none;
+outline:none;
+display:block;
+}
+      .footer-section h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -5px;
+    width: 40px;
+    height: 2px;
+    background: #ff4d4d;
+}.footer-section{
+text-align:center;
+}
+
+.footer-section h3{
+position:relative;
+}
+    
+  
+    .reveal { 
+    opacity: 0; 
+    transition: opacity 0.8s ease-out; 
+}
+
+.reveal.active { 
+    opacity: 1; 
+}
+      .gallery-grid{
+    background:#f4f4f4;
+}
+
+
+    .gallery-grid{
+    gap:15px;
+}
+
+}
+    </style>
+</head>
+<body>
+
+<nav>
+    <div class="logo">NTR STUDIO</div>
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    <ul id="navLinks">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="machines.html">Machines</a></li>
+        <li><a href="button.html">Contact</a></li>
+    </ul>
+</nav>
+
+<section class="gallery-container">
+    <h1 class="reveal">Captured Moments</h1>
+    <div class="gallery-grid">
+        <div class="photo-card reveal">
+            <img src="img24.jpeg" alt="Wedding Photography by NTR Studio" loading="lazy">
+            <!-- <div class="photo-overlay"><h3>Wedding Bells</h3></div> -->
+        </div>
+        <div class="photo-card reveal">
+            <img src="img29.jpg" alt="Baby Shoot Limdi Surendranagar" loading="lazy">
+            <!-- <div class="photo-overlay"><h3>Baby Smiles</h3></div> -->
+        </div>
+        <div class="photo-card reveal">
+            <img src="img33.jpeg" alt="Pre-wedding Shoot" loading="lazy">
+            <!-- <div class="photo-overlay"><h3>Pre-Wedding Glow</h3></div> -->
+        </div>
+        <div class="photo-card reveal">
+            <img src="img30.jpg" alt="Event Cinematic Shoot" loading="lazy">
+            <!-- <div class="photo-overlay"><h3>Events</h3></div> -->
+        </div>
+        <div class="photo-card reveal">
+            <img src="img43.jpeg" alt="DSLR Photography" loading="lazy">
+            <!-- <div class="photo-overlay"><h3>Portrait Shoot</h3></div> -->
+        </div>
+        <div class="photo-card reveal">
+            <img src="img34.jpeg" alt="NTR Studio Creative Work" loading="lazy">
+            <!-- <div class="photo-overlay"><h3>Cinematic Shots</h3></div> -->
+        </div>
+        <div class="photo-card reveal">
+            <img src="img40.jpeg" alt="NTR Studio Creative Work" loading="lazy">
+            <!-- <div class="photo-overlay"><h3>Cinematic Shots</h3></div> -->
+        </div>
+        <div class="photo-card reveal">
+            <img src="img35.jpeg" alt="NTR Studio Creative Work" loading="lazy">
+            <!-- <div class="photo-overlay"><h3>Cinematic Shots</h3></div> -->
+        </div>
+    </div>
+</section>
+<section class="services-section reveal">
+    <h2>Our Special Services</h2>
+    <div class="services-grid">
+    <div class="service-card" onclick="showGallery('wedding')">
+        <div class="service-icon">👩‍❤️‍👨</div>
+        <h4>Wedding Photography</h4>
+    </div>
+
+    <div class="service-card" onclick="showGallery('photos')">
+        <div class="service-icon">📸</div>
+        <h4>PHOTOS</h4>
+    </div>
+
+    <div class="service-card" onclick="showGallery('events')">
+        <div class="service-icon">🎀🌸</div>
+        <h4>Events</h4>
+    </div>
+</div>
+    </div>
+
+    <div id="dynamic-gallery" class="dynamic-gallery-container">
+        <h3 id="gallery-title"></h3>
+        <div class="photo-display-grid" id="photo-grid">
+            </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-section">
+            <h2>NTR STUDIO</h2>
+            <p>Professional photography, videography & editing studio with premium equipment and a talented team.</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Quick Links</h3>
+            <a href="index.html">Home</a>
+            <a href="gallery.html">Gallery</a>
+            <a href="machines.html">Machines</a>
+            <a href="button.html">Contact</a>
+        </div>
+
+        <div class="footer-section">
+            <h3>Contact Info</h3>
+            <p>📞 +91 9913622760</p>
+            <p>📍 NTR Studio, Limdi, Surendranagar, Gujarat</p>
+       <p>✉️ ntr.studio.limbdi@gmail.com</p>
+        </div>
+
+        <div class="footer-section">
+            <h3>Follow Us</h3>
+            <div class="social">
+                <a href="https://www.instagram.com/studio_ntr?igsh=YTlyYzQ5bTQxYW9s">📷 Instagram</a><br>
+                <a href="https://youtube.com/@studiontr6308?si=7VKHPAFj_lfA0hMf" target="_blank">🎥 YouTube</a><br>
+                <!-- <a href="#">📘 Facebook</a> -->
+            </div>
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 NTR Studio | All rights reserved.
+    </div>
+</footer>
+      
+<script>
+    function toggleMenu() {
+        document.getElementById("navLinks").classList.toggle("show");
+    }
+
+    // SCROLL REVEAL SCRIPT
+    function reveal() {
+        var reveals = document.querySelectorAll(".reveal");
+        for (var i = 0; i < reveals.length; i++) {
+            var windowHeight = window.innerHeight;
+            var elementTop = reveals[i].getBoundingClientRect().top;
+            var elementVisible = 100;
+            if (elementTop < windowHeight - elementVisible) {
+                reveals[i].classList.add("active");
+            }
+        }
+    }
+    window.addEventListener("scroll", reveal);
+    window.onload = reveal;
+    // દરેક કેટેગરીના 9-9 ફોટાનો ડેટા
+const galleryData = {
+    'wedding': ['img32.jpg', 'img19.jpeg', 'img36.jpeg', 'img37.jpeg', 'img38.jpeg', 'img20.jpeg'],
+    // 'baby': ['b1.jpg', 'b2.jpg', 'b3.jpg', 'b4.jpg', 'b5.jpg', 'b6.jpg'],
+    // 'editing': ['e1.jpg', 'e2.jpg', 'e3.jpg', 'e4.jpg', 'e5.jpg', 'e6.jpg'],
+    'photos': ['img44.jpeg', 'img23.jpeg', 'img45.jpeg', 'img21.jpeg', 'img31.jpeg', 'img41.jpeg'],
+    'events': ['E1.jpeg', 'E2.jpeg', 'E3.jpeg', 'E4.jpeg', 'E5.jpeg', 'img28.jpeg']
+};
+
+function showGallery(category) {
+    const container = document.getElementById('dynamic-gallery');
+    const grid = document.getElementById('photo-grid');
+    const title = document.getElementById('gallery-title');
+
+    // ૧. જૂના ફોટા સાફ કરો
+    grid.innerHTML = "";
+    
+    // ૨. ટાઈટલ સેટ કરો
+    title.innerText = category.toUpperCase() + " COLLECTION";
+
+    // ૩. નવા 9 ફોટા ઉમેરો
+    const photos = galleryData[category];
+    photos.forEach((photoSrc, index) => {
+        const img = document.createElement('img');
+        img.src = photoSrc; // અહીં તમારા ફોટાનું નામ આવશે
+        img.alt = category + " photo " + (index + 1);
+        
+        // એનિમેશન માટે થોડો સમય આપીને ક્લાસ ઉમેરવો
+        setTimeout(() => {
+            img.classList.add('show');
+        }, index * 100); 
+
+        grid.appendChild(img);
+    });
+
+    // ૪. ગેલેરી સેક્શન બતાવો અને ત્યાં સ્ક્રોલ કરો
+    container.style.display = 'block';
+    container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+</script>
+
+</body>
+</html>
+
     </style>
 </head>
 <body>
