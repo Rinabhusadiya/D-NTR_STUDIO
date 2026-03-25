@@ -202,7 +202,28 @@ transform:translateX(-50%);
 .contact-form form button:hover{
     background:#e63b3b;
 }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: white;
 
+    position: sticky;   /* ⭐ important */
+    top: 0;             /* ⭐ top par stick */
+    z-index: 1000;      /* ⭐ content upar rahe */
+    
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: white;
+}body{
+    padding-top: 70px; /* navbar height */
+}
     </style>
     <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 
