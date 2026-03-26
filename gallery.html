@@ -442,7 +442,25 @@
 }.logo{
     letter-spacing: 2px;
 }
-     
+   nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 8%;
+    background: white;
+    position: fixed;   /* sticky બદલે fixed */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}body {
+    font-family: "Poppins", sans-serif;
+    background: #f4f4f4;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    padding-top: 70px;   /* navbar height જેટલું */
+}  
    
     </style>
 </head>
